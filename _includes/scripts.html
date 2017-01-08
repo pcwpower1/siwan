@@ -1,0 +1,42 @@
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<script type="text/javascript">
+	
+	var oPoint = new nhn.api.map.LatLng(37.8761395, 127.7351092);
+	nhn.api.map.setDefaultPoint('LatLng');
+	oMap = new nhn.api.map.Map('testMap' ,{
+		point : oPoint,
+			zoom : 12,
+			enableWheelZoom : true,
+			enableDragPan : true,
+			enableDblClickZoom : true,
+			mapMode : 0,
+			activateTrafficMap : false,
+			activateBicycleMap : false,
+			minMaxLevel : [ 1, 14 ],
+			size : new nhn.api.map.Size(280, 200)
+	});
+	var oSize = new nhn.api.map.Size(28, 37);
+	var oOffset = new nhn.api.map.Size(14, 37);
+	var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
+
+	var oMarker = new nhn.api.map.Marker(oIcon, { title : '바이킹 뷔페 ' }); 
+	oMarker.setPoint(oPoint);
+	oMap.addOverlay(oMarker);
+
+	var oLabel = new nhn.api.map.MarkerLabel(); 
+	oMap.addOverlay(oLabel);
+	oLabel.setVisible(true, oMarker);
+</script>
