@@ -14,7 +14,7 @@
 
 <script type="text/javascript">
 	
-	var oPoint = new nhn.api.map.LatLng(37.8761395, 127.7351092);
+	var oPoint = new nhn.api.map.LatLng(37.5528385, 127.0403022);
 	nhn.api.map.setDefaultPoint('LatLng');
 	oMap = new nhn.api.map.Map('testMap' ,{
 		point : oPoint,
@@ -32,7 +32,7 @@
 	var oOffset = new nhn.api.map.Size(14, 37);
 	var oIcon = new nhn.api.map.Icon('http://static.naver.com/maps2/icons/pin_spot2.png', oSize, oOffset);
 
-	var oMarker = new nhn.api.map.Marker(oIcon, { title : '바이킹 뷔페 ' }); 
+	var oMarker = new nhn.api.map.Marker(oIcon, { title : '그랜드워커힐서울 명월관 ' }); 
 	oMarker.setPoint(oPoint);
 	oMap.addOverlay(oMarker);
 
